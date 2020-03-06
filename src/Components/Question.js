@@ -86,8 +86,9 @@ class Question extends Component {
 		return (
 			<div>
 				<h2>Question {this.state.questionNumber}</h2>
-				<p>{this.state.definition}</p>
+				<p className="definition">{this.state.definition}</p>
 				<button
+					className="wordButton"
 					onClick={() => {
 						this.handleClick(this.props.words[0]);
 					}}
@@ -95,6 +96,7 @@ class Question extends Component {
 					incorrect: {this.props.words[this.state.questionNumber]}
 				</button>
 				<button
+					className="wordButton"
 					onClick={() => {
 						this.handleClick(this.state.correctWord);
 					}}

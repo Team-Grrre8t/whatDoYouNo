@@ -52,6 +52,7 @@ class Question extends Component {
 			//------------to make sure if the word has definition-------------//
 			////////////////////////////////////////////////////////////////////
 			.then(response => {
+				console.log('hey this is my .then')
 				response = response.data;
 
 				const wordsWithDefs = response.filter(word => {
@@ -68,7 +69,7 @@ class Question extends Component {
 					{
 						definition: wordsWithDefs[0].defs[randomNumberForDefs],
 						correctWord: wordsWithDefs[0].word,
-						isLoading: false
+						isLoading: false,
 					},
 					() => {
 						// ---randomize which button holds the correct answer---//
@@ -78,9 +79,10 @@ class Question extends Component {
 				);
 			})
 			.catch(error => {
+				console.log('this is the .catch error message')
 				this.setState({
 					error: true
-				});
+				},);
 			});
 
 		///////////////////////////////////////////////////////
